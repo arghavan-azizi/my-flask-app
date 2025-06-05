@@ -1,0 +1,36 @@
+[2025-05-22T08:43:30.268726] ❌ خطا در job be2d086b-0a11-41d1-aed2-e68674b7dca9:
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python310\lib\site-packages\yt_dlp\YoutubeDL.py", line 1653, in wrapper
+    return func(self, *args, **kwargs)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python310\lib\site-packages\yt_dlp\YoutubeDL.py", line 1788, in __extract_info
+    ie_result = ie.extract(url)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python310\lib\site-packages\yt_dlp\extractor\common.py", line 748, in extract
+    ie_result = self._real_extract(url)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python310\lib\site-packages\yt_dlp\extractor\generic.py", line 2375, in _real_extract
+    raise ExtractorError(
+yt_dlp.utils.ExtractorError: [generic] '<لینک_ویدیو>' is not a valid URL. Set --default-search "ytsearch" (or run  yt-dlp "ytsearch:<لینک_ویدیو>" ) to search YouTube
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\OneDrive\Desktop\project_kaggle\server.py", line 36, in background_job
+    urls = prepare_audio_for_kaggle(url, temp_dir=temp_path)
+  File "C:\Users\user\OneDrive\Desktop\project_kaggle\process_audio.py", line 23, in prepare_audio_for_kaggle
+    audio_path = download_and_extract_audio(video_url, temp_dir)
+  File "C:\Users\user\OneDrive\Desktop\project_kaggle\audio_extractor.py", line 18, in download_and_extract_audio
+    ydl.download([video_url])
+  File "C:\Users\user\AppData\Local\Programs\Python\Python310\lib\site-packages\yt_dlp\YoutubeDL.py", line 3634, in download
+    self.__download_wrapper(self.extract_info)(
+  File "C:\Users\user\AppData\Local\Programs\Python\Python310\lib\site-packages\yt_dlp\YoutubeDL.py", line 3607, in wrapper
+    res = func(*args, **kwargs)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python310\lib\site-packages\yt_dlp\YoutubeDL.py", line 1642, in extract_info
+    return self.__extract_info(url, self.get_info_extractor(key), download, extra_info, process)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python310\lib\site-packages\yt_dlp\YoutubeDL.py", line 1671, in wrapper
+    self.report_error(str(e), e.format_traceback())
+  File "C:\Users\user\AppData\Local\Programs\Python\Python310\lib\site-packages\yt_dlp\YoutubeDL.py", line 1111, in report_error
+    self.trouble(f'{self._format_err("ERROR:", self.Styles.ERROR)} {message}', *args, **kwargs)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python310\lib\site-packages\yt_dlp\YoutubeDL.py", line 1050, in trouble
+    raise DownloadError(message, exc_info)
+yt_dlp.utils.DownloadError: [0;31mERROR:[0m [generic] '<لینک_ویدیو>' is not a valid URL. Set --default-search "ytsearch" (or run  yt-dlp "ytsearch:<لینک_ویدیو>" ) to search YouTube
+
+------------------------------------------------------------
